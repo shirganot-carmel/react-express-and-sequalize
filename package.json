@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "express": "nodemon bin/www"
   },
   "dependencies": {
     "@babel/core": "7.9.0",
@@ -29,6 +30,7 @@
     "debug": "~2.6.9",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
+    "err": "^2.1.11",
     "eslint": "^6.6.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-loader": "3.0.3",
@@ -69,13 +71,15 @@
     "sequelize": "^5.21.11",
     "sequelize-cli": "^5.5.1",
     "style-loader": "0.23.1",
+    "swagger-ui-express": "^4.1.4",
     "terser-webpack-plugin": "2.3.5",
     "ts-pnp": "1.1.6",
     "url-loader": "2.3.0",
     "webpack": "4.42.0",
     "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
-    "workbox-webpack-plugin": "4.3.1"
+    "workbox-webpack-plugin": "4.3.1",
+    "yamljs": "^0.3.0"
   },
   "eslintConfig": {
     "extends": "react-app"

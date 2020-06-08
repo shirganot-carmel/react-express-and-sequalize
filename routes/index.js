@@ -1,9 +1,20 @@
-var express = require('express');
-var router = express.Router();
+const fs = require('fs');
+const path = require('path');
+const basename = path.basename(__filename);
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
 
-module.exports = router;
+module.exports = (app) => {
+  fs
+    .readdirSync(__dirname)
+    .filter(file => {
+      return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
+    })
+    .map(file => {
+      const rFile = require(`./${file}`);
+      const ext = path.extname(file);
+      const fileName = path.basename(file, ext);
+
+      return app.use(`/${fileName}s`, rFile)
+    });
+
+};
